@@ -1,5 +1,7 @@
 // script.js
 
+const BASE_URL = "https://online-banking-system-ra4y.onrender.com";
+
 document.addEventListener("DOMContentLoaded", () => {
     const page = window.location.pathname;
 
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const identifier = document.getElementById("loginIdentifier").value;
             const password = document.getElementById("loginPassword").value;
 
-            const res = await fetch("/api/users/login", {
+            const res = await fetch(`${BASE_URL}/api/users/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ identifier, password })
@@ -41,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            const res = await fetch("/api/users/register", {
+            const res = await fetch(`${BASE_URL}/api/users/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, mobile, password })
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const otp = document.getElementById("otp").value;
             const user = JSON.parse(localStorage.getItem("user"));
 
-            const res = await fetch(`/api/otp/verify?mobile=${user.mobile}&otp=${otp}`);
+            const res = await fetch(`${BASE_URL}/api/otp/verify?mobile=${user.mobile}&otp=${otp}`);
             const result = await res.json();
 
             if (res.ok) {
@@ -80,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const user = JSON.parse(localStorage.getItem("user"));
         document.getElementById("userName").textContent = user.name;
 
-        fetch(`/api/users/balance?mobile=${user.mobile}`)
+        fetch(`${BASE_URL}/api/users/balance?mobile=${user.mobile}`)
             .then(res => res.json())
             .then(data => {
                 document.getElementById("userBalance").textContent = data.balance;
@@ -125,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 requestBody.bankName = bankName;
             }
 
-            const res = await fetch("/api/transactions/transfer", {
+            const res = await fetch(`${BASE_URL}/api/transactions/transfer`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(requestBody)
@@ -146,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 📄 TRANSACTIONS
     if (page.includes("transactions.html")) {
         const user = JSON.parse(localStorage.getItem("user"));
-        fetch(`/api/transactions/history?mobile=${user.mobile}`)
+        fetch(`${BASE_URL}/api/transactions/history?mobile=${user.mobile}`)
             .then(res => res.json())
             .then(transactions => {
                 const list = document.getElementById("transactionList");
