@@ -4,3 +4,5 @@ backend/target/
 *.jar
 backend/.env 
 backend/target/ 
+backend/.env 
+backend/target/ 
