@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Online Banking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <h2>Welcome, <span id="username"></span> 👋</h2>
+    <p><strong>Mobile:</strong> <span id="usermobile"></span></p>
+    <p><strong>Account Balance:</strong> ₹<span id="userbalance"></span></p>
+
+    <div class="button-group">
+      <a href="transaction.html" class="button">View Transactions</a>
+      <a href="transfer.html" class="button">Transfer Money</a>
+      <button onclick="logout()" class="button logout">Logout</button>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

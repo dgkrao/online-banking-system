@@ -1,0 +1,129 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f0f6ff;
+  color: #1e2a38;
+}
+
+/* Centered container */
+.container,
+.form-container,
+.dashboard-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 50, 0.1);
+  text-align: center;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+/* Forms */
+form input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button,
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Disabled button */
+button:disabled {
+  background-color: #c4d9f3;
+  cursor: not-allowed;
+}
+
+/* Button group styling */
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Message text */
+.message {
+  margin-top: 15px;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f4f9ff;
+}
+
+/* Logout button (red) */
+.logout {
+  background-color: #dc3545;
+}
+
+.logout:hover {
+  background-color: #a92834;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+  .container,
+  .form-container,
+  .dashboard-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}

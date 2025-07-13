@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer Money - Online Banking</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Transfer Money</h2>
+
+        <label for="method">Choose Transfer Method:</label>
+        <select id="method" onchange="toggleTransferFields()">
+            <option value="mobile">Mobile Number</option>
+            <option value="account">Bank Account</option>
+        </select>
+
+        <form id="transferForm">
+            <div id="mobileField">
+                <input type="tel" id="toMobile" placeholder="Receiver Mobile Number" />
+            </div>
+
+            <div id="accountField" style="display: none;">
+                <input type="text" id="toAccount" placeholder="Receiver Bank Account" />
+            </div>
+
+            <input type="number" id="amount" placeholder="Amount (₹)" required min="1">
+            <button type="submit">Send Money</button>
+        </form>
+
+        <div id="transferMessage" class="message"></div>
+
+        <div class="button-group">
+            <a href="dashboard.html" class="button">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script src="transfer.js"></script>
+</body>
+
+</html>
