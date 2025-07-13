@@ -1,27 +1,21 @@
+<!-- dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - Online Banking</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Dashboard | BlueBank</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="dashboard-container">
-    <h2>Welcome, <span id="username"></span> 👋</h2>
-    <p><strong>Mobile:</strong> <span id="usermobile"></span></p>
-    <p><strong>Account Balance:</strong> ₹<span id="userbalance"></span></p>
-
-    <div class="button-group">
-      <a href="transaction.html" class="button">View Transactions</a>
-      <a href="transfer.html" class="button">Transfer Money</a>
-      <button onclick="logout()" class="button logout">Logout</button>
-    </div>
+  <div class="container">
+    <h2>Welcome, <span id="userName"></span></h2>
+    <p>Current Balance: ₹<span id="userBalance">0</span></p>
+    <button onclick="window.location.href='transfer.html'">Make a Transfer</button>
+    <button onclick="window.location.href='transactions.html'">View Transactions</button>
   </div>
-
-  <script src="dashboard.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

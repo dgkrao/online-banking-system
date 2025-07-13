@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.bank.model.Transaction;
 
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-    List<Transaction> findBySenderId(Long senderId);
+    List<Transaction> findBySenderMobile(String mobile);
 }

@@ -1,11 +1,12 @@
 package com.bank.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "user")
 public class User {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,20 +15,17 @@ public class User {
     private String email;
     private String mobile;
     private String password;
-
-    private boolean verified;
-    private double balance;
+    private double balance = 0.0;
 
     // Constructors
     public User() {}
 
-    public User(String name, String email, String mobile, String password, boolean verified, double balance) {
+    public User(String name, String email, String mobile, String password) {
         this.name = name;
         this.email = email;
         this.mobile = mobile;
         this.password = password;
-        this.verified = verified;
-        this.balance = balance;
+        this.balance = 0.0;
     }
 
     // Getters and Setters
@@ -45,9 +43,6 @@ public class User {
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
-
-    public boolean isVerified() { return verified; }
-    public void setVerified(boolean verified) { this.verified = verified; }
 
     public double getBalance() { return balance; }
     public void setBalance(double balance) { this.balance = balance; }

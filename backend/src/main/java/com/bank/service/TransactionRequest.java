@@ -1,35 +1,52 @@
 package com.bank.service;
 
 public class TransactionRequest {
-    private Long senderId;
-    private String toMobile;
-    private String toAccount;
+    private String senderMobile;
+    private String recipientMobile;
+    private String recipientAccount;
+    private String bankName;
+    private String ifsc;
     private double amount;
 
-    public TransactionRequest() {}
-
-    public Long getSenderId() {
-        return senderId;
+    // Getters and setters
+    public String getSenderMobile() {
+        return senderMobile;
     }
 
-    public void setSenderId(Long senderId) {
-        this.senderId = senderId;
+    public void setSenderMobile(String senderMobile) {
+        this.senderMobile = senderMobile;
     }
 
-    public String getToMobile() {
-        return toMobile;
+    public String getRecipientMobile() {
+        return recipientMobile;
     }
 
-    public void setToMobile(String toMobile) {
-        this.toMobile = toMobile;
+    public void setRecipientMobile(String recipientMobile) {
+        this.recipientMobile = recipientMobile;
     }
 
-    public String getToAccount() {
-        return toAccount;
+    public String getRecipientAccount() {
+        return recipientAccount;
     }
 
-    public void setToAccount(String toAccount) {
-        this.toAccount = toAccount;
+    public void setRecipientAccount(String recipientAccount) {
+        this.recipientAccount = recipientAccount;
+    }
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
+
+    public String getIfsc() {
+        return ifsc;
+    }
+
+    public void setIfsc(String ifsc) {
+        this.ifsc = ifsc;
     }
 
     public double getAmount() {

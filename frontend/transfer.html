@@ -1,44 +1,40 @@
+<!-- transfer.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transfer Money - Online Banking</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Transfer Money | BlueBank</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="form-container">
-        <h2>Transfer Money</h2>
-
-        <label for="method">Choose Transfer Method:</label>
-        <select id="method" onchange="toggleTransferFields()">
-            <option value="mobile">Mobile Number</option>
-            <option value="account">Bank Account</option>
-        </select>
-
+    <div class="container">
+        <h2>Money Transfer</h2>
         <form id="transferForm">
-            <div id="mobileField">
-                <input type="tel" id="toMobile" placeholder="Receiver Mobile Number" />
+            <select id="transferType">
+                <option value="mobile">Transfer via Mobile</option>
+                <option value="bank">Transfer via Bank Account</option>
+            </select>
+
+            <div id="mobileTransfer">
+                <input type="text" id="recipientMobile" placeholder="Recipient Mobile" />
             </div>
 
-            <div id="accountField" style="display: none;">
-                <input type="text" id="toAccount" placeholder="Receiver Bank Account" />
+            <div id="bankTransfer" style="display:none;">
+                <input type="text" id="recipientAccount" placeholder="Account Number" />
+                <input type="text" id="confirmAccount" placeholder="Confirm Account Number" />
+                <input type="text" id="ifsc" placeholder="IFSC Code" />
+                <input type="text" id="bankName" placeholder="Bank Name" />
             </div>
 
-            <input type="number" id="amount" placeholder="Amount (₹)" required min="1">
-            <button type="submit">Send Money</button>
+            <input type="number" id="amount" placeholder="Amount (INR)" required />
+            <button type="submit">Transfer</button>
+            <p class="error" id="transferError"></p>
+            <p class="success" id="transferSuccess"></p>
         </form>
-
-        <div id="transferMessage" class="message"></div>
-
-        <div class="button-group">
-            <a href="dashboard.html" class="button">Back to Dashboard</a>
-        </div>
     </div>
-
-    <script src="transfer.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

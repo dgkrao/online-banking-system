@@ -1,28 +1,23 @@
+<!-- otp.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTP Verification - Online Banking</title>
+    <title>Verify OTP | BlueBank</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="form-container">
+    <div class="container">
         <h2>OTP Verification</h2>
-        <input type="tel" id="mobile" placeholder="Enter your Mobile Number">
-        <input type="text" id="otp" placeholder="Enter OTP">
-        <button onclick="verifyOtp()">Verify OTP</button>
-        <button id="resendBtn" onclick="resendOtp()" disabled>Resend OTP (30s)</button>
-        <div id="otpMessage" class="message"></div>
-
-        <div class="button-group">
-            <a href="index.html" class="button">Home</a>
-        </div>
+        <form id="otpForm">
+            <input type="text" id="otp" placeholder="Enter OTP" required />
+            <button type="submit">Verify OTP</button>
+            <p class="error" id="otpError"></p>
+        </form>
     </div>
-
-    <script src="otp.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

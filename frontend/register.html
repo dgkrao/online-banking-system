@@ -1,35 +1,28 @@
+<!-- register.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Online Banking</title>
+  <title>Register | BlueBank</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="form-container">
+  <div class="container">
     <h2>Register</h2>
     <form id="registerForm">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="tel" id="mobile" placeholder="Mobile Number" required>
-      <input type="password" id="password" placeholder="Password" required>
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="mobile" placeholder="Mobile Number" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
       <button type="submit">Register</button>
+      <div class="toggle-link"><a href="login.html">Already have an account? Login</a></div>
+      <p class="error" id="registerError"></p>
     </form>
-
-    <div id="otpSection" style="display: none;">
-      <h3>Enter OTP</h3>
-      <input type="text" id="otp" placeholder="Enter OTP" required>
-      <button onclick="verifyOtp()">Verify OTP</button>
-      <button id="resendOtpBtn" onclick="resendOtp()" disabled>Resend OTP (30s)</button>
-    </div>
-
-    <div id="message" class="message"></div>
   </div>
-
-  <script src="register.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
