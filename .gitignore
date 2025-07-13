@@ -1,0 +1,4 @@
+backend/.env.txt
+backend/target/
+*.class
+*.jar
