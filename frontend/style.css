@@ -1,4 +1,3 @@
-/* style.css */
 :root {
   --primary-bg: #0b0c10;
   --secondary-bg: #1f2833;
@@ -8,6 +7,7 @@
   --error: #ff4b5c;
 }
 
+/* Base Styles */
 body {
   background-color: var(--primary-bg);
   color: var(--primary-text);
@@ -23,6 +23,7 @@ body {
   background-color: var(--secondary-bg);
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
 }
 
 h2 {
@@ -43,6 +44,14 @@ select {
   border-radius: 5px;
   background-color: #20232a;
   color: var(--primary-text);
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 button {
@@ -61,6 +70,12 @@ button:hover {
   background-color: #379693;
 }
 
+button:disabled {
+  background-color: #3a4c4b;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 a {
   color: var(--secondary-text);
   text-decoration: none;
@@ -69,6 +84,12 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.toggle-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .error {
@@ -85,12 +106,6 @@ a:hover {
   text-align: center;
 }
 
-.toggle-link {
-  display: block;
-  text-align: center;
-  margin-top: 1rem;
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -103,4 +118,40 @@ ul li {
   margin-bottom: 0.5rem;
   border-radius: 5px;
   border-left: 4px solid var(--accent-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 500px) {
+  .container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  input,
+  button,
+  select {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 0.85rem;
+  }
+
+  .toggle-link {
+    margin-top: 0.8rem;
+  }
+}
+
+/* Optional Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
 }
